@@ -6,6 +6,13 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    animation: gradientBG 5s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background: linear-gradient(to right, #ffafbd, #ffc3a0); }
+    50% { background: linear-gradient(to right, #ffc3a0, #ffafbd); }
+    100% { background: linear-gradient(to right, #ffafbd, #ffc3a0); }
 }
 
 .container {
@@ -16,10 +23,12 @@ body {
     text-align: center;
     max-width: 400px;
     width: 100%;
+    animation: fadeIn 2s;
 }
 
 h1 {
     color: #333;
+    font-family: 'Pacifico', cursive;
     margin-bottom: 20px;
 }
 
@@ -43,17 +52,20 @@ button {
     color: white;
     cursor: pointer;
     border-radius: 0 5px 5px 0;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 button:hover {
     background-color: #ff3a50;
+    transform: scale(1.1);
 }
 
 ul {
     list-style-type: none;
     padding: 0;
     margin: 0 0 20px 0;
+    max-height: 200px;
+    overflow-y: auto;
 }
 
 ul li {
@@ -63,6 +75,7 @@ ul li {
     border: 1px solid #ccc;
     border-radius: 5px;
     position: relative;
+    animation: fadeIn 1s;
 }
 
 ul li::before {
@@ -75,13 +88,10 @@ ul li::before {
     font-size: 1.2em;
     color: #333;
     margin-top: 20px;
+    animation: fadeIn 1s;
 }
 
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
-}
-
-#result {
-    animation: fadeIn 1s ease-in-out;
 }
