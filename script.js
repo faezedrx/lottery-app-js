@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const names = [];
 
-    // افزودن نام جدید به لیست
+    // Add new name to the list
     addButton.addEventListener('click', addName);
     nameInput.addEventListener('keydown', (event) => {
         if (event.key === 'Enter') {
@@ -34,14 +34,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // انجام قرعه‌کشی
+    // Draw lottery
     drawButton.addEventListener('click', () => {
         if (names.length > 0) {
             const randomIndex = Math.floor(Math.random() * names.length);
             const winner = names[randomIndex];
-            result.textContent = `برنده: ${winner}`;
+            result.textContent = `🎉 Winner: ${winner} 🎉`;
         } else {
-            result.textContent = 'لطفاً ابتدا چند نام اضافه کنید.';
+            result.textContent = 'Please add some names first.';
         }
     });
 });
