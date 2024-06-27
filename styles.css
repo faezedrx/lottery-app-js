@@ -1,6 +1,6 @@
 body {
-    background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #ffafbd, #ffc3a0);
+    font-family: 'Arial', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,15 +9,18 @@ body {
 }
 
 .container {
-    background-color: #ffffff;
+    background: #ffffff;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     text-align: center;
+    max-width: 400px;
+    width: 100%;
 }
 
 h1 {
     color: #333;
+    margin-bottom: 20px;
 }
 
 .input-container {
@@ -36,7 +39,7 @@ input[type="text"] {
 button {
     padding: 10px 20px;
     border: none;
-    background-color: #007bff;
+    background-color: #ff5e78;
     color: white;
     cursor: pointer;
     border-radius: 0 5px 5px 0;
@@ -44,7 +47,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #ff3a50;
 }
 
 ul {
@@ -59,9 +62,26 @@ ul li {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    position: relative;
+}
+
+ul li::before {
+    content: '🎟️';
+    position: absolute;
+    left: -30px;
 }
 
 #result {
     font-size: 1.2em;
     color: #333;
+    margin-top: 20px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+#result {
+    animation: fadeIn 1s ease-in-out;
 }
