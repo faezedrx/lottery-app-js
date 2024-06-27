@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const randomIndex = Math.floor(Math.random() * names.length);
             const winner = names[randomIndex];
             result.textContent = `🎉 Winner: ${winner} 🎉`;
+            result.style.animation = 'fadeIn 1s';
         } else {
             result.textContent = 'Please add some names first.';
         }
